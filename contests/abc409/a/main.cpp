@@ -12,12 +12,12 @@ int main()
     {
         if (T[i] == 'o' && A[i] == 'o')
         {
-            std::cout << "Yes";
+            std::cout << "Yes\n";
             return 0; 
         }
     }
 
     //衝突なかったので、Noで終了
-    std::cout << "No";
+    std::cout << "No\n";
     return 0;
 }
