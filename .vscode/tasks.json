@@ -23,7 +23,14 @@
         {
             "type": "shell",
             "label": "Test with oj",
-            "command": "oj test -c ./main.exe -d tests",
+            "command": "~/.local/bin/oj",
+            "args": [
+                "test",
+                "-c",
+                "./main.exe",
+                "-d",
+                "tests"
+            ],
             "group": {
                 "kind": "test",
                 "isDefault": true
@@ -32,6 +39,39 @@
                 "cwd": "${fileDirname}"
             },
             "problemMatcher": []
+        },
+        {
+            "label": "build-and-test",
+            "dependsOn": [
+                "C/C++: gcc build active file",
+                "Test with oj"
+            ],
+            "dependsOrder": "sequence",
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: gcc アクティブなファイルのビルド",
+            "command": "/usr/bin/gcc",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "デバッガーによって生成されたタスク。"
         }
     ],
     "version": "2.0.0"
