@@ -51,27 +51,15 @@
             "problemMatcher": []
         },
         {
-            "type": "cppbuild",
-            "label": "C/C++: gcc アクティブなファイルのビルド",
-            "command": "/usr/bin/gcc",
+            "label": "Build and Debug",
+            "type": "shell",
+            "dependsOn": "C/C++: gcc build active file",
+            "command": "gdb",
             "args": [
-                "-fdiagnostics-color=always",
-                "-g",
-                "${file}",
-                "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}/${fileBasenameNoExtension}.exe"
             ],
-            "options": {
-                "cwd": "${fileDirname}"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "detail": "デバッガーによって生成されたタスク。"
+            "group": "build",
+            "problemMatcher": []
         }
     ],
     "version": "2.0.0"
