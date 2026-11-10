@@ -11,7 +11,7 @@ void Flip(int flipCount)
 
     for (int i = 0; i < flipCount; i++)
     {
-        *(deck.begin() + i) = -tmp[i];
+        deck[i] = -tmp[i];
     }
 }
 
